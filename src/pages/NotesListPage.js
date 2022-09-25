@@ -1,23 +1,28 @@
 import React, {useEffect, useState} from 'react'
 // import notes from '../assets/data'
 import Listitem from '../components/Listitem'
+import AddButton from '../components/AddButton'
 
 const NotesListPage = () => {
 
   let [notes,setNotes] = useState([]);
 
   useEffect(()=>{
+    getNotes(); 
 
 
   },[]);
 
   let getNotes = async() => {
-
-    let respone  = await fetch('https://localhost:3001/notes/')
-    let data = await respone.json()
+    
+    let response  = await fetch('http://127.0.0.1:3001/notes');
+    let data = await response.json();
+    setNotes(data);
 
 
   }
+
+  
 
   return (
     <div className='notes'>
@@ -29,10 +34,11 @@ const NotesListPage = () => {
       <div className='notes-list'>
         {
           notes.map((note,index) =>(
-            <Listitem key={index} note={notes} />
+            <Listitem key={index} note={note} />
           ) )
         }
       </div>
+      <AddButton />
 
     </div>
   )
