@@ -29,7 +29,7 @@ const NotesListPage = () => {
       <div className='notes-list'>
         {
           notes.map((note,index) =>(
-            <Listitem key={index} note={note} />
+            <Listitem key={index} note={notes} />
           ) )
         }
       </div>
