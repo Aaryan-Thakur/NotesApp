@@ -27,7 +27,9 @@
 
 /* BASE STYLES */
 
-
+html{
+  background-color: var(--color-dark);
+}
 *{
   margin: 0;
   padding: 0;
@@ -132,8 +134,9 @@ a {
 .notes-list {
   padding: 0;
   margin: 16px 0;
-  height: 70vh;
+  height: 65vh;
   overflow-y: auto;
+  padding-bottom: 75px ;
   scrollbar-width: none; /* Firefox */
 }
 
@@ -146,6 +149,7 @@ a {
   margin-bottom: 12px;
   padding: 8px 16px;
   transition: all 0.2s ease-in-out;
+  position: relative;
 }
 
 .notes-list-item:hover {
@@ -168,6 +172,20 @@ a {
 .notes-list-item p {
   font-size: 14px;
   color: var(--color-light);
+}
+
+
+.delete-button>svg{
+  height: 30px;
+
+}
+.delete-container{
+  position: absolute;
+  left: 420px;
+  bottom: 20px;
+
+  
+
 }
 
 .floating-button {
@@ -246,4 +264,18 @@ a {
 
 .note textarea::-webkit-scrollbar {
   display: none;
+}
+
+
+/* Responsivness  */
+@media (max-width: 425px) {
+  .app{
+    height: 100vh;
+  }
+
+  .notes-list{
+    height: 81vh;
+    padding-bottom: 90px;
+  }
+  
 }
