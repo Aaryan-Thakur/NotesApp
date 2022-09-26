@@ -13,16 +13,28 @@ const NotesListPage = () => {
 
   },[]);
 
+ 
+
+
+
   let getNotes = async() => {
     
     let response  = await fetch('http://127.0.0.1:3001/notes');
     let data = await response.json();
     setNotes(data);
 
+    return data;
+
 
   }
 
-  
+  useEffect(()=>{
+    getNotes(); 
+
+
+  },[getNotes]);
+
+ 
 
   return (
     <div className='notes'>

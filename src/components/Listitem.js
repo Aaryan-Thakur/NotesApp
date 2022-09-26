@@ -1,16 +1,21 @@
-import React from 'react'
+import React,{useEffect} from 'react'
 import {Link,redirect} from 'react-router-dom'
-import AddButton from '../components/AddButton'
 import DeleteButton from './DeleteButton'
+import NotesListPage from '../pages/NotesListPage'
+
+
+
+
 
 
 
 const Listitem = ({note}) => {
 
-  
-
   let getTitle = (note)=>{
     let title = note.body.split("\n")[0];
+    if(title.length>=10){
+    title = title.slice(0,10) + "...";
+    }
     
     return title;
   }
@@ -25,6 +30,9 @@ const Listitem = ({note}) => {
     let title = getTitle(note);
     let content = note.body;
     content = content.replaceAll(title,"");
+    if(content.length>=10){
+      content = content.slice(0,10) + "...";
+      }
     return content.slice(0,45);
   }
 
@@ -37,8 +45,9 @@ const Listitem = ({note}) => {
       // body: JSON.stringify({...note,'updated': new Date()})
     })
 
-    redirect("/")
-  
+    redirect("/");
+
+
   }
   
 
@@ -51,8 +60,8 @@ const Listitem = ({note}) => {
         <h3>{getTitle(note)}</h3>
         <div onClick={()=>{deleteNote(note.id)} } className="delete-container"><DeleteButton/></div>
         
-        <div>{getDate(note)} 
-             {getContent(note)}</div>
+        <span className='date'>{getDate(note)}</span>
+        <span className='content'>{getContent(note)}</span>
       </div>
       
     </Link>

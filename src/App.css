@@ -29,6 +29,7 @@
 
 html{
   background-color: var(--color-dark);
+  overflow: hidden;
 }
 *{
   margin: 0;
@@ -72,6 +73,7 @@ a {
   background-color: var(--color-white);
   box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.05);
   position: relative;
+  overflow: hidden;
 }
 
 
@@ -134,9 +136,9 @@ a {
 .notes-list {
   padding: 0;
   margin: 16px 0;
-  height: 65vh;
+  height: 81vh;
   overflow-y: auto;
-  padding-bottom: 75px ;
+  padding-bottom: 141px ;
   scrollbar-width: none; /* Firefox */
 }
 
@@ -175,24 +177,35 @@ a {
 }
 
 
+.date{
+  font-size: 13px;
+  padding-right: 25px;
+}
+
+
+
 .delete-button>svg{
   height: 30px;
 
 }
-.delete-container{
-  position: absolute;
-  left: 420px;
-  bottom: 20px;
 
-  
+.delete-button>svg:hover{
+  box-shadow:  0px 0px 42px -6px  rgba(251, 251, 251, 0.252);
 
 }
+
+.delete-container{
+  position: absolute;
+  left: 415px;
+  bottom: 9px;
+}
+
 
 .floating-button {
   font-size: 48px;
   position: absolute;
-  bottom: 24px;
-  right: 16px;
+  bottom: 20px;
+  right: 20px;
   background: var(--color-main);
   border: none;
   width: 60px;
@@ -271,11 +284,17 @@ a {
 @media (max-width: 425px) {
   .app{
     height: 100vh;
+    overflow: hidden;
   }
 
   .notes-list{
     height: 81vh;
     padding-bottom: 90px;
+  }
+
+  .delete-container{
+    left: 87vw;
+    bottom: 2vh;
   }
   
 }

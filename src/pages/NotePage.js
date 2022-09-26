@@ -57,7 +57,7 @@ let createNote = async() =>{
     body: JSON.stringify({...note,'updated': new Date()})
   })
 
-  redirect("/");
+  // redirect("/");
 
 }
 
@@ -65,14 +65,14 @@ let handleSumbit = () =>{
   if(noteId.id !== 'new' && !note.body)
   {
     deleteNote();
-  }else if(noteId.id != 'new'){
+  }else if(noteId.id !== 'new'){
     updateNote();
   }
-  else if(noteId.id === 'new'&& note!=null){
+  else if(noteId.id === 'new'&& note!==null){
     createNote();
   }
   
-  redirect("/");
+  // redirect("/");
 
 }
 
