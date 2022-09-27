@@ -229,6 +229,8 @@ a {
 =>  Note Styles
 ================================*/
 
+
+
 .note-header {
   display: flex;
   align-items: center;
@@ -246,7 +248,7 @@ a {
 
 .note-header h3 svg {
   fill: var(--color-main);
-  width: 20px;
+  width: 30px;
   margin-right: 8px;
 }
 

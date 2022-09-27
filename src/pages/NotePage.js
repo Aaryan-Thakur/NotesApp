@@ -1,7 +1,8 @@
 import React , {useState,useEffect} from 'react'
 // import notes from '../assets/data'
 import { redirect, useParams } from 'react-router-dom';
-import {Link} from 'react-router-dom'
+import {Link} from 'react-router-dom';
+import {ReactComponent as BackIcon} from '../assets/back.svg'
 
 const NotePage = () => {
 
@@ -80,7 +81,7 @@ return (
     <div className='note'>
       <div className='note-header'>
         <h3>
-          <Link to = "/" onClick={handleSumbit} >Back</Link>
+          <Link to = "/" onClick={handleSumbit} ><BackIcon className='back-icon'/></Link>
         </h3>
 
         {noteId.id !== 'new'?(<Link to = "/" onClick={deleteNote}>Delete</Link>):

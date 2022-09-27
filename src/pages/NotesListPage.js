@@ -5,6 +5,15 @@ import AddButton from '../components/AddButton'
 
 const NotesListPage = () => {
 
+ let [i,set] = useState(1);
+
+ let update = () => {
+  set(i+1);
+};
+
+
+
+
   let [notes,setNotes] = useState([]);
 
   useEffect(()=>{
@@ -32,7 +41,7 @@ const NotesListPage = () => {
     getNotes(); 
 
 
-  },[getNotes]);
+  },[i]);
 
  
 
@@ -46,7 +55,7 @@ const NotesListPage = () => {
       <div className='notes-list'>
         {
           notes.map((note,index) =>(
-            <Listitem key={index} note={note} />
+            <Listitem update={update} key={index} note={note} />
           ) )
         }
       </div>
