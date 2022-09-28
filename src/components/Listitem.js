@@ -8,7 +8,9 @@ import DeleteButton from './DeleteButton'
 
 
 
+
 const Listitem = ({update,note}) => {
+
 
   let getTitle = (note)=>{
 
@@ -43,9 +45,9 @@ const Listitem = ({update,note}) => {
   }
 
   
-
+// FIX PROXY HERE
   let deleteNote = async(id) =>{
-    await fetch(`http://127.0.0.1:8000/notes/${id}/delete`,{
+    await fetch(`http://127.0.0.1:8000/api/notes/${id}/delete`,{
       method :'DELETE',
       headers: {
         'Content-Type': 'application/json'

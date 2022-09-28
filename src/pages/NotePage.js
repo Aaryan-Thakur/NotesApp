@@ -19,13 +19,13 @@ useEffect(() => {
 
 let getNote = async() =>{
   if(noteId.id==="new") return;
-  let response = await fetch(`/notes/${noteId.id}`)
+  let response = await fetch(`http://localhost:8000/api/notes/${noteId.id}`)
   let data = await response.json();
   setNote(data);
 }
 
 let updateNote = async() =>{
-  await fetch(`http://localhost:8000/notes/${noteId.id}/update`,{
+  await fetch(`http://localhost:8000/api/notes/${noteId.id}/update`,{
     method :'PUT',
     headers: {
       'Content-Type': 'application/json'
@@ -38,7 +38,7 @@ let updateNote = async() =>{
 }
 
 let deleteNote = async() =>{
-  await fetch(`http://localhost:8000/notes/${noteId.id}/delete`,{
+  await fetch(`http://localhost:8000/api/notes/${noteId.id}/delete`,{
     method :'DELETE',
     headers: {
       'Content-Type': 'application/json'
@@ -52,7 +52,7 @@ let deleteNote = async() =>{
 
 let createNote = async() =>{
   if(!note.body) return;
-  await fetch(`http://localhost:8000/notes/new/`,{
+  await fetch('http://localhost:8000/api/notes/new/',{
     method :'POST',
     headers: {
       'Content-Type': 'application/json'
