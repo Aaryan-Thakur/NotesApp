@@ -89,7 +89,7 @@ return (
         </h3>
 
         {noteId.id !== 'new'?(<Link to = "/" onClick={deleteNote}>Delete</Link>):
-                             (console.log())}
+                             (<Link to='/' onClick={handleSumbit}>Save</Link>)}
 
         
       </div>
