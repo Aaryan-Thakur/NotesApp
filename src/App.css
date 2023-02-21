@@ -55,6 +55,38 @@ a {
 /* APP STYLES */
 
 
+.form-container{
+  display: flex;
+  align-items: center;
+  width: 100VW;
+  justify-content: center;
+  color: whitesmoke;
+}
+
+.form-title{
+  display: flex;
+  justify-content: center;
+}
+.form-element-button{
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+}
+#register-button{
+  color: black;
+}
+
+.label{
+  padding-left: 50px;
+}
+
+input{
+  height: 50px;
+  width: 500px;
+  margin: 20px;
+  border-radius: 20px;
+}
+
 .container {
   width: 100%;
   height: 100vh;

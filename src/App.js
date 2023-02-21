@@ -1,16 +1,13 @@
 import {
   BrowserRouter as Router,
   Routes,
-  Route,
-  useParams
+  Route
 }
 from 'react-router-dom' 
 import './App.css';
 import Header from './components/Header'
 import NotesListPage from './pages/NotesListPage'
 import NotePage from './pages/NotePage'
-import Listitem from './components/Listitem';
-import notes from './assets/data';
 
 
 function App() {
